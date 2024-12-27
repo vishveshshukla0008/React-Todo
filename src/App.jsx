@@ -120,7 +120,7 @@ function App() {
           )}
           {todos.map((item) => {
             return (
-              (!showFinished || !!item.isCompleted) && (
+              (!showFinished || !item.isCompleted) && (
                 <div
                   key={item.id}
                   className={`${
