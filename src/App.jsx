@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { FaFaceSadTear } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 
 function App() {
   const [todo, setTodo] = useState("");
@@ -47,15 +48,14 @@ function App() {
     if (isResponse) {
       // Remove the todo by filtering out the item with the matching id
       const newTodos = todos.filter((item) => item.id !== id);
-      
+
       // Update the state with the new list
       setTodos(newTodos);
-  
+
       // Save updated todos to localStorage
       localStorage.setItem("todos", JSON.stringify(newTodos));
     }
   };
-  
 
   const handleCheckbox = (e) => {
     const id = e.target.name;
@@ -160,6 +160,15 @@ function App() {
             );
           })}
         </div>
+      </div>
+      <div className="bg-blue-900 text-center items-center gap-2 p-2 justify-center text-white text-sm flex">
+        <div>
+          Developed By -{" "}
+          <a href="https://www.linkedin.com/in/vishwesh-shukla-554078288/">
+            Vishwesh Shukla
+          </a>
+        </div>
+        <FaLinkedin className="text-white" />
       </div>
     </>
   );
